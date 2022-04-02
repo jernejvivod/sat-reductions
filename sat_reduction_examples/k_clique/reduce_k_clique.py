@@ -2,7 +2,7 @@ import itertools
 import os
 import subprocess
 
-from sat_reduction_examples.clique import logger
+from sat_reduction_examples.k_clique import logger
 
 
 def reduce_clique(nodes, adj_dict, k):
