@@ -4,7 +4,7 @@ import logging
 import os
 import subprocess
 
-from sat_reductions.clique.reduce_clique import parse_graph, find_max_k_for_graph
+from sat_reductions.k_clique.reduce_clique import parse_graph, find_max_k_for_graph
 from sat_reductions.n_queens.reduce_nq_sat import reduce_nq_sat
 
 logging.basicConfig()

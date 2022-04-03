@@ -2,10 +2,10 @@ import itertools
 import os
 import subprocess
 
-from sat_reductions.clique import logger
+from sat_reductions.k_clique import logger
 
 
-def reduce_clique(nodes, adj_dict, k):
+def reduce_k_clique(nodes, adj_dict, k):
     """Get expression that formulates the k-clique problem as a SAT problem.
 
     Author: Jernej Vivod
@@ -80,7 +80,7 @@ def find_max_k_for_graph(nodes, adj_dict, sat_solver_path):
     found = False
     k = 2
     while not found:
-        clauses = reduce_clique(nodes, adj_dict, k)
+        clauses = reduce_k_clique(nodes, adj_dict, k)
         with open(_TMP_SOL_PATH, 'w') as f:
             f.write(clauses)
         sol = subprocess.run([sat_solver_path, '--verb=0', _TMP_SOL_PATH], stdout=subprocess.PIPE)
